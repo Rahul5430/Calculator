@@ -79,3 +79,15 @@ h1 {
     max-height: 50px;
     padding: 10px;
 }
+@media screen and (max-width: 400px) {
+    #calculator {
+        width: 300px;
+    }
+    #calc-grid {
+        grid-template-columns: repeat(4, 55px);
+        grid-template-rows: minmax(120px, auto) repeat(5, 55px);
+    }
+    h1 {
+        margin: auto;
+    }
+}
