@@ -15,7 +15,7 @@ class Calculator {
     }
     appendNumber(num) {
         if (num === "." && this.current.includes(".")) return;
-        if (this.current) {
+        if (this.reset) {
             this.current = num.toString();
             this.reset = false;
         } else {
