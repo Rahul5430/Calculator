@@ -52,7 +52,7 @@ class Calculator {
             case "*":
                 computation = parseFloat((prev * curr).toFixed(12));
                 break;
-            case "/":
+            case "÷":
                 if (curr == 0) {
                     computation = "Error";
                 } else {
@@ -88,11 +88,11 @@ class Calculator {
 }
 const numberBtns = document.querySelectorAll("[data-number]");
 const oppBtns = document.querySelectorAll(".opp");
-const clearBtns = document.querySelectorAll("[data-clear]");
-const deleteBtns = document.querySelectorAll("[data-delete]");
-const equalBtns = document.querySelectorAll("[data-equals]");
-const formulaScrn = document.querySelectorAll("#formula");
-const resultScrn = document.querySelectorAll("#result");
+const clearBtns = document.querySelector("[data-clear]");
+const deleteBtns = document.querySelector("[data-delete]");
+const equalBtns = document.querySelector("[data-equals]");
+const formulaScrn = document.querySelector("#formula");
+const resultScrn = document.querySelector("#result");
 
 const calculator = new Calculator(formulaScrn, resultScrn);
 
@@ -113,12 +113,12 @@ oppBtns.forEach(button => {
 deleteBtns.addEventListener("click", button => {
     calculator.delete();
     calculator.updateDisplay();
-    calculator.reset = true;
 });
 
 equalBtns.addEventListener("click", button => {
     calculator.operate();
     calculator.updateDisplay();
+    calculator.reset = true;
 });
 
 clearBtns.addEventListener("click", button => {
@@ -184,7 +184,7 @@ window.addEventListener("keydown", (e) => {
             break;
         case 111:
         case 191:
-            calculator.chooseOperation("/");
+            calculator.chooseOperation("÷");
             break;
         case 13:
         case 61:
